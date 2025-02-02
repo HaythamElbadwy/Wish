@@ -219,7 +219,7 @@ function ManagePlaylist() {
         ) : error ? (
           <p className="text-red-500">{error}</p>
         ) : (
-          <div className="bg-white rounded-lg overflow-hidden">
+          <div className="bg-white rounded-lg overflow-hidden overflow-x-auto">
             <div className="grid grid-cols-12 bg-[#F9FAFB] border-b py-4 px-6">
               <div className="col-span-3 text-[#4B4C4C] font-medium">{langValue['Playlist']}</div>
               <div className="col-span-7 text-[#4B4C4C] font-medium mx-6">URL</div>
@@ -229,7 +229,7 @@ function ManagePlaylist() {
             <div className="divide-y">
               {filteredPlaylists.map((playlist) => (
                 <div key={playlist._id} className="grid grid-cols-12 py-4 px-6 items-center hover:bg-gray-50">
-                  <div className="col-span-3">{playlist.name}</div>
+                  <div className="col-span-3 text-black">{playlist.name}</div>
                   <div className="col-span-7 text-[#696CD6] truncate mx-6">
                     {playlist.isProtected ? "Protected" : playlist.url}
                   </div>
