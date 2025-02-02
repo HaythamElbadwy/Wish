@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styles from './Footer.module.css';
 import { NavLink } from 'react-router-dom';
-import { Lang } from '../../lang.jsx';
+import { Lang } from '../../Lang.jsx';
 
 export default function Footer() {
 
