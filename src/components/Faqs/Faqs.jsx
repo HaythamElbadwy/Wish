@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import styles from './Faqs.module.css';
-import { Lang } from '../../lang.jsx';
+import { Lang } from '../../Lang.jsx';
 
 export default function Faqs() {
 

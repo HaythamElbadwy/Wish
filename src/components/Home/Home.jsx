@@ -13,7 +13,7 @@ import windows from '../../assets/Image/windows.png';
 import apple from '../../assets/Image/apple.png';
 import whatsapp from '../../assets/Image/whatsappimg.jpeg';
 import { FloatingWhatsApp } from 'react-floating-whatsapp';
-import { Lang } from '../../lang.jsx';
+import { Lang } from '../../Lang.jsx';
 import Loader from '../Loader/Loader.jsx';
 export default function Home() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
