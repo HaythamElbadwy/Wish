@@ -21,8 +21,9 @@ export default function Navbar() {
   };
 
   const selectedLanguage = localStorage.getItem("lang") || 'en';
+  console.log('langTest', selectedLanguage);
   const langValue = Lang[selectedLanguage];
-console.log(langValue , langValue?.ManagePlaylist);
+  console.log(langValue, langValue?.ManagePlaylist);
 
 
   const languages = [
