@@ -3,7 +3,7 @@ import styles from './About.module.css';
 import tv from '../../assets/Image/TV.png'
 import mobil from '../../assets/Image/mobile movie screen.png'
 import appStore from '../../assets/Image/appstore.png'
-import { Lang } from '../../Lang.jsx';
+import { Lang } from '../../lang.jsx';
 
 export default function About() {
 

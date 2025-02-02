@@ -4,7 +4,8 @@ import { NavLink, Link as RouterLink, useLocation, useNavigate } from 'react-rou
 import styles from './Navbar.module.css';
 import flagEn from '../../assets/Image/FlagKingdom.svg'
 import flagAr from '../../assets/Image/egypt.png';
-import { Lang } from '../../Lang.js';
+import { Lang } from '../../lang';
+
 
 export default function Navbar() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -21,9 +22,7 @@ export default function Navbar() {
   };
 
   const selectedLanguage = localStorage.getItem("lang") || 'en';
-  console.log('langTest', selectedLanguage);
   const langValue = Lang[selectedLanguage];
-  console.log(langValue, langValue?.ManagePlaylist);
 
 
   const languages = [
@@ -182,7 +181,7 @@ export default function Navbar() {
                 }}
                 className="text-white cursor-pointer"
               >
-                home
+                {langValue['home']}
               </ScrollLink>
             </li>
             <li>
@@ -197,7 +196,7 @@ export default function Navbar() {
                 }}
                 className="text-white cursor-pointer"
               >
-                faqs
+                {langValue['faqs']}
               </ScrollLink>
             </li>
             <li>
@@ -212,7 +211,7 @@ export default function Navbar() {
                 }}
                 className="text-white cursor-pointer"
               >
-                contact
+                {langValue['contact']}
               </ScrollLink>
             </li>
             <li>
@@ -222,7 +221,7 @@ export default function Navbar() {
                   className="text-white cursor-pointer"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  ManagePlaylist
+                  {langValue['ManagePlaylist']}
                 </NavLink>
               )}
             </li>

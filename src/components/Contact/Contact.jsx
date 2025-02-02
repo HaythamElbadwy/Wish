@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styles from './Contact.module.css';
 import contactUs from '../../assets/Image/Contact.jfif'
-import { Lang } from '../../Lang.jsx';
+import { Lang } from '../../lang.jsx';
 export default function Contact() {
 
     let [count,setCount] = useState(0);
