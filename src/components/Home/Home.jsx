@@ -76,13 +76,13 @@ export default function Home() {
        <section className={classes.home} id="home">
         <div className="text-white h-full lg:h-screen p-6 lg:p-16 flex justify-center items-center flex-col">
           {isLoggedIn ? null :
-            <h1 className={`${classes.managePlaylist_title} text-2xl lg:text-3xl text-center mt-[2rem]`}>{langValue['ManagePlaylist']}</h1>
+            <h1 className={`${classes.managePlaylist_title} text-2xl lg:text-3xl text-center mt-[2rem]`}>ManagePlaylist</h1>
           }
           <div className={`container h-full ${isLoggedIn ? `text-center lg:mt-44 ${classes.wish_responive}` : ''}`}>
             {isLoggedIn ? null :
               <div className={`${classes.macaddres} mt-4 rounded-xl`}>
                 <form onSubmit={handleLogin} id="login-form" className="max-w-xs lg:max-w-sm mx-auto rounded-sm p-6">
-                  <h1 className="text-lg lg:text-2xl mb-5 text-center">{langValue['LoginPlaylist']}</h1>
+                  <h1 className="text-lg lg:text-2xl mb-5 text-center">LoginPlaylist</h1>
 
                   <div className="mb-5">
                     <label htmlFor="macAddress" className="block mb-2 text-sm lg:text-base text-white">MAC ADDRESS</label>
@@ -114,7 +114,7 @@ export default function Home() {
                   >
                     {isLoading ?
                     <i className='fas fa-spinner fa-spin text-2xl'></i>
-                     : langValue['Login']}
+                     : 'Login'}
                     
                   </button>
                 </form>
@@ -125,7 +125,7 @@ export default function Home() {
 
               <h1 className={`${classes.wish_title} text-3xl lg:text-4xl sm:text-2xl text-white font-bold max-w-3xl mx-auto`}>WishTv</h1>
               <p className="text-[21px] lg:text-2xl max-w-3xl mx-auto">
-              {langValue['WishTvWebsite']}
+              WishTvWebsite
               </p>
 
             </div>
@@ -149,7 +149,7 @@ export default function Home() {
 
       <section className={`bg-black py-20 text-center overflow-hidden z-10 ${classes.slider_section}`}>
         <h3 className="text-white mb-8 text-lg lg:text-2xl">
-        {langValue['WishTvDevice']}
+        WishTvDevice
         </h3>
 
         {/* Marquee Container */}

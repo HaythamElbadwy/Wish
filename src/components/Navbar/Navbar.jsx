@@ -180,7 +180,7 @@ export default function Navbar() {
                 }}
                 className="text-white cursor-pointer"
               >
-                {langValue.home}
+                home
               </ScrollLink>
             </li>
             <li>
@@ -195,7 +195,7 @@ export default function Navbar() {
                 }}
                 className="text-white cursor-pointer"
               >
-                {langValue.faqs}
+                faqs
               </ScrollLink>
             </li>
             <li>
@@ -210,7 +210,7 @@ export default function Navbar() {
                 }}
                 className="text-white cursor-pointer"
               >
-                {langValue.contact}
+                contact
               </ScrollLink>
             </li>
             <li>
@@ -220,7 +220,7 @@ export default function Navbar() {
                   className="text-white cursor-pointer"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  {langValue.ManagePlaylist}
+                  ManagePlaylist
                 </NavLink>
               )}
             </li>
