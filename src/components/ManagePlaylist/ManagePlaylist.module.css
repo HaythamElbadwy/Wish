@@ -1,10 +1,5 @@
 @media (max-width : 640px){
-    .table_header,
-    .table_body{
-        width: 110% !important;
+    .table_header{
+        width: 109% !important;
     }
 }
-
-/* .table_header{
-    width: 107% !important;
-} */

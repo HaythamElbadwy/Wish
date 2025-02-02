@@ -229,7 +229,7 @@ function ManagePlaylist() {
 
             <div className="divide-y">
               {filteredPlaylists.map((playlist) => (
-                <div key={playlist._id} className={`${classes.table_body} grid grid-cols-12 py-4 px-6 items-center hover:bg-gray-50`}>
+                <div key={playlist._id} className={`grid grid-cols-12 py-4 px-6 items-center hover:bg-gray-50`}>
                   <div className="col-span-3 text-black">{playlist.name}</div>
                   <div className="col-span-7 text-[#696CD6] truncate mx-6">
                     {playlist.isProtected ? "Protected" : playlist.url}
