@@ -4,7 +4,7 @@ import { NavLink, Link as RouterLink, useLocation, useNavigate } from 'react-rou
 import styles from './Navbar.module.css';
 import flagEn from '../../assets/Image/FlagKingdom.svg'
 import flagAr from '../../assets/Image/egypt.png';
-// import { Lang } from '../../Lang.jsx';
+import { Lang } from '../../Lang.js';
 
 export default function Navbar() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -21,7 +21,7 @@ export default function Navbar() {
   };
 
   const selectedLanguage = localStorage.getItem("lang") || 'en';
-  // const langValue = Lang[selectedLanguage];
+  const langValue = Lang[selectedLanguage];
 
 
   const languages = [
@@ -180,7 +180,7 @@ export default function Navbar() {
                 }}
                 className="text-white cursor-pointer"
               >
-                homeTest
+                {langValue.home}
               </ScrollLink>
             </li>
             <li>
@@ -195,7 +195,7 @@ export default function Navbar() {
                 }}
                 className="text-white cursor-pointer"
               >
-                faqsTest
+                {langValue.faqs}
               </ScrollLink>
             </li>
             <li>
@@ -210,7 +210,7 @@ export default function Navbar() {
                 }}
                 className="text-white cursor-pointer"
               >
-                contactTest
+                {langValue.contact}
               </ScrollLink>
             </li>
             <li>
@@ -220,7 +220,7 @@ export default function Navbar() {
                   className="text-white cursor-pointer"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  manageplaylistTest
+                  {langValue.ManagePlaylist}
                 </NavLink>
               )}
             </li>
