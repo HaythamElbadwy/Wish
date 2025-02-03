@@ -48,7 +48,7 @@ export default function About() {
               <img src={appStore} className="w-[18rem] lg:w-[30rem] mr-auto  mt-6" alt="App Stores" />
             </div>
             <div className="w-full lg:w-1/2 mb-8 lg:mb-0">
-              <img src={mobil} alt="Mobile Wish TV" className="mr-auto w-[15rem] lg:w-[20rem]" />
+              <img src={mobil} alt="Mobile Wish TV" className="m-auto w-[15rem] lg:w-[20rem]" />
             </div>
           </div>
         </div>
