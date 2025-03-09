@@ -3,6 +3,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { Dialog } from "@headlessui/react";
 import { Lang } from "../../lang.jsx";
 import classes from './ManagePlaylist.module.css'
+import { toast } from "react-toastify";
 
 function ManagePlaylist() {
   const navigate = useNavigate();
@@ -18,13 +19,13 @@ function ManagePlaylist() {
   const [macAddress, setMacAddress] = useState('');
   const [isChecked, setIsChecked] = useState(true);
   const [isDisabled, setIsDisabled] = useState(false);
-   const selectedLanguage = localStorage.getItem("lang") || 'en';
-    const langValue = Lang[selectedLanguage];
+  const selectedLanguage = localStorage.getItem("lang") || 'en';
+  const langValue = Lang[selectedLanguage];
 
   useEffect(() => {
     const fetchPlaylists = async () => {
       try {
-        const response = await fetch("https://wish-4a54.onrender.com/playList/get", {
+        const response = await fetch("https://wish-omega-blush.vercel.app/playList/get", {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -35,7 +36,7 @@ function ManagePlaylist() {
         if (response.ok) {
           const data = await response.json();
           console.log(data);
-          
+
           setPlaylists(data.allPlaylists);
           setFilteredPlaylists(data.allPlaylists);
         } else {
@@ -61,7 +62,7 @@ function ManagePlaylist() {
   const activePlayeList = async (playListID) => {
     setIsDisabled(true)
     try {
-      const response = await fetch(`https://wish-4a54.onrender.com/playList/active/${playListID}`, {
+      const response = await fetch(`https://wish-omega-blush.vercel.app/playList/active/${playListID}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -98,7 +99,7 @@ function ManagePlaylist() {
 
   const handleDelete = async (playlistId) => {
     try {
-      const response = await fetch(`https://wish-4a54.onrender.com/playList/delete/${playlistId}`, {
+      const response = await fetch(`https://wish-omega-blush.vercel.app/playList/delete/${playlistId}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
@@ -129,7 +130,7 @@ function ManagePlaylist() {
   const handlePasswordSubmit = async () => {
     setPasswordError('');
     try {
-      const response = await fetch(`https://wish-4a54.onrender.com/playList/checkPassword/${selectedPlaylist._id}`, {
+      const response = await fetch(`https://wish-omega-blush.vercel.app/playList/checkPassword/${selectedPlaylist._id}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -142,6 +143,9 @@ function ManagePlaylist() {
 
       if (response.ok) {
         setIsPasswordModalOpen(false);
+        toast.success(data.message, {
+          theme: 'dark'
+        });
         navigate(`editplaylist/${selectedPlaylist._id}`, {
           state: {
             playlist: selectedPlaylist,
@@ -165,11 +169,14 @@ function ManagePlaylist() {
       }
     } catch (err) {
       console.error("Error checking password:", err);
+      toast.error('An error occurred. Please try again.', {
+        theme: 'dark'
+      });
       setPasswordError('An error occurred. Please try again.');
     }
   };
-  function checkBoxChecked(e, playListID) {    
-    if(!e.target.checked){
+  function checkBoxChecked(e, playListID) {
+    if (!e.target.checked) {
       return;
     }
     activePlayeList(playListID)

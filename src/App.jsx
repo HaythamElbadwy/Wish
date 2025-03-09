@@ -14,6 +14,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ManagePlaylistRouting from "./components/ManagePlaylistRouting/ManagePlaylistRouting";
 import TermsCondition from "./components/TermsCondition/TermsCondition.jsx";
 import PrivacyPolicy from "./components/PrivacyPolicy/PrivacyPolicy.jsx";
+import { ToastContainer} from 'react-toastify';
+
 
 function App() {
   useEffect(() => {
@@ -55,6 +57,7 @@ function App() {
   return (
     <>
       <RouterProvider router={routes}></RouterProvider>
+      <ToastContainer />
     </>
   );
 }

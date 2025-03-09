@@ -5,6 +5,7 @@ import styles from './Navbar.module.css';
 import flagEn from '../../assets/Image/FlagKingdom.svg'
 import flagAr from '../../assets/Image/egypt.png';
 import { Lang } from '../../lang';
+import logo from '../../assets/Image/wishlogo.png'
 
 
 export default function Navbar() {
@@ -78,7 +79,9 @@ export default function Navbar() {
 
         <div>
           <NavLink to='/Wish' className="flex items-center space-x-3 rtl:space-x-reverse">
-            <span className="text-white text-2xl">Wish Tv</span>
+            <span className="text-white text-2xl">
+              <img src={logo} className='w-10' alt="wishtv" />
+            </span>
           </NavLink>
         </div>
 

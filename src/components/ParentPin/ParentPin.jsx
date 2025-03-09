@@ -18,7 +18,7 @@ export default function ParentPin() {
 
         try {
             setIsLodaing(true)
-            const response = await fetch('https://wish-4a54.onrender.com/lock/addParentPin', {
+            const response = await fetch('https://wish-omega-blush.vercel.app/lock/addParentPin', {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',

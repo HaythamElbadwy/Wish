@@ -67,7 +67,7 @@ export default function AddPlayList({ playlistId, initialPlaylistName, initialPl
 
     const apiUrl = playlistId
       ? 'http://62.182.85.163:5053/api/managePlaylists/updatePlaylist'
-      : 'https://wish-4a54.onrender.com/playList/add';
+      : 'https://wish-omega-blush.vercel.app/playList/add';
 
     try {
       const response = await fetch(apiUrl, {
