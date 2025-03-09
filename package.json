@@ -26,6 +26,7 @@
     "react-floating-whatsapp": "^5.0.8",
     "react-router-dom": "^6.26.2",
     "react-scroll": "^1.9.0",
+    "react-toastify": "^11.0.3",
     "semantic-ui-popup": "^2.5.0"
   },
   "devDependencies": {
