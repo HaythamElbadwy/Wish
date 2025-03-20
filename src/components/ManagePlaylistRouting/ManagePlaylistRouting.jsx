@@ -15,7 +15,7 @@ function ManagePlaylistRouting() {
 
   const handleLogout = () => {
     localStorage.removeItem("authToken");
-    navigate("/Wish");
+    // navigate("/Wish");
     window.location.reload();
   };
 

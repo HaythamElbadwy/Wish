@@ -48,7 +48,6 @@ export default function Faqs() {
     } catch (err) {
       console.error("Error Saving Content:", err);
     } finally {
-      setIsLoading(false)
     }
   };
   useEffect(() => {
