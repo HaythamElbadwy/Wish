@@ -15,7 +15,7 @@ function ManagePlaylistRouting() {
 
   const handleLogout = () => {
     localStorage.removeItem("authToken");
-    // navigate("/Wish");
+    navigate("/Wish");
     window.location.reload();
   };
 
@@ -63,7 +63,7 @@ function ManagePlaylistRouting() {
             <NavItem to="accountdetails" icon="icon-[iconamoon--profile]">
               {langValue['AccountDetails']}
             </NavItem>
-            <NavItem to="/" icon="icon-[tabler--logout-2]" onClick={handleLogout}>
+            <NavItem  icon="icon-[tabler--logout-2]" onClick={handleLogout}>
               {langValue['Logout']}
             </NavItem>
           </ul>
