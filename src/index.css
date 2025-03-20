@@ -29,7 +29,7 @@
 }
 
 #sideBar .iconColor {
-  color: #DC97E2;
+  color: rgba(119, 164, 229, 1);
 }
 
 #sideBar:hover {
@@ -114,7 +114,7 @@
 
   #sideBar ul li a:hover .iconColor,
   #sideBar ul li a.active:not(:hover) .iconColor {
-    color: #DC97E2;
+    color: rgba(119, 164, 229, 1);
   }
 }
 
@@ -128,7 +128,7 @@
 }
 
 #sideBar ul li a.active:not(:hover) .iconColor {
-  color: #DC97E2;
+  color: rgba(119, 164, 229, 1);
 }
 
 input{

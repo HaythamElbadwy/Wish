@@ -19,6 +19,7 @@ import { toast } from 'react-toastify';
 import { data } from 'autoprefixer';
 import logo from '../../assets/Image/wishlogo.png'
 
+
 export default function Home() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [macAddress, setMacAddress] = useState('');
@@ -123,7 +124,7 @@ export default function Home() {
 
                     <button
                       type="submit"
-                      className="w-full py-2.5 text-white bg-[#B269B9] hover:bg-[#a158a3] rounded-lg focus:ring focus:outline-none"
+                      className={`${classes.login_btn} w-full py-2.5 text-white rounded-lg focus:ring focus:outline-none`}
                     >
                       {isLoading ?
                         <i className='fas fa-spinner fa-spin text-2xl'></i>
@@ -146,7 +147,7 @@ export default function Home() {
           </div>
           <FloatingWhatsApp phoneNumber="+1234567890"  // Replace with your WhatsApp number
             accountName="WishTV"  // Customize with your name or business name
-            avatar={whatsapp} // Optional avatar or logo imageس
+            avatar={logo} // Optional avatar or logo imageس
             statusMessage="Typically replies within 1 hour"
             chatMessage="Hello! How can we help you?"
             allowEsc

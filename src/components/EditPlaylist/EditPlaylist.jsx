@@ -95,7 +95,7 @@ export default function EditPlaylist() {
             onChange={(e) => setIsProtected(e.target.checked)}
             className="sr-only peer"
           />
-          <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#C067C8]"></div>
+          <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-900"></div>
           <span className="ms-3 text-sm font-medium text-gray-700">{langValue['ProtectedPlaylist']}</span>
         </label>
         <b className="text-[13px] block text-[#7D7E81]">
@@ -123,7 +123,7 @@ export default function EditPlaylist() {
       <center>
         <button
           type="submit"
-          className="text-white bg-[#C067C8] font-medium rounded-lg text-sm w-[205px] py-2.5 hover:bg-[#C067C8]/90"
+          className="text-white bg-blue-900 font-medium rounded-lg text-sm w-[205px] py-2.5"
         >
           {langValue['SaveChanges']}
         </button>

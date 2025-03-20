@@ -164,3 +164,6 @@ button {
 .slider_section {
   direction: ltr !important;
 }
+.login_btn{
+  background-color: rgba(16, 59, 119, 1);
+}

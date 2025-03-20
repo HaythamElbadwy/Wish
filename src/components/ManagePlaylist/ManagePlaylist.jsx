@@ -215,7 +215,7 @@ function ManagePlaylist() {
               {macAddress || 'No MAC Address'}
             </button>
             <NavLink to="addplaylist" className="flex-shrink-0 w-full sm:w-auto">
-              <button className="w-full text-white bg-[#C067C8] font-medium rounded-lg text-sm px-5 py-2.5">
+              <button className="w-full text-white bg-blue-900 font-medium rounded-lg text-sm px-5 py-2.5">
                 {langValue['AddPlaylist']}
               </button>
             </NavLink>

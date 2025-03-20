@@ -146,7 +146,7 @@ export default function AddPlayList({ playlistId, initialPlaylistName, initialPl
                 onChange={handleInputChange}
                 className="sr-only peer"
               />
-              <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#C067C8]"></div>
+              <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-900"></div>
               <span className="ms-3 text-sm font-medium text-gray-700">{langValue['ProtectedPlaylist']}</span>
             </label><br />
             <b className="text-[13px] block text-[#7D7E81]">
@@ -177,8 +177,8 @@ export default function AddPlayList({ playlistId, initialPlaylistName, initialPl
               type="submit"
               disabled={loading}
               className={`
-                w-full sm:w-auto min-w-[200px] bg-[#C067C8] text-white font-medium rounded-lg px-8 py-2.5
-                ${loading ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#C067C8]/90'}
+                w-full sm:w-auto min-w-[200px] bg-blue-900 text-white font-medium rounded-lg px-8 py-2.5
+                ${loading ? 'opacity-50 cursor-not-allowed' : ''}
               `}
             >
               {loading ? langValue['Saving']: playlistId ? langValue['UpdatePlaylist'] : langValue['AddPlaylistTwo']} 

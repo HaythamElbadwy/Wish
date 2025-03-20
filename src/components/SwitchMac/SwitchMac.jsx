@@ -67,7 +67,7 @@ export default function SwitchMac() {
                 </b>
                 <br />
                 <center>
-                    <button type="submit" className="text-white bg-[#C067C8] font-medium rounded-lg text-xm w-[205px]">
+                    <button type="submit" className="text-white bg-blue-900 font-medium rounded-lg text-xm w-[205px]">
                         {langValue['Save']}
                     </button>
                 </center>

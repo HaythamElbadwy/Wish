@@ -71,7 +71,7 @@ export default function ParentPin() {
                 </b>
                 <br />
                 <center>
-                    <button type="submit" className="text-white bg-[#C067C8] font-medium rounded-lg text-xm w-[205px]">
+                    <button type="submit" className="text-white bg-blue-900 font-medium rounded-lg text-xm w-[205px]">
 
                         {isLoading ? langValue['Saving...'] : langValue['Save']}
                     </button>

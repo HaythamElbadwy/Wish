@@ -56,7 +56,7 @@ export default function Contact() {
       ></textarea>
       <button
         type="submit"
-        className="w-full py-2 bg-purple-600 text-white font-semibold rounded-md hover:bg-purple-700 transition"
+        className={`${styles.contact_btn} w-full py-2 text-white font-semibold rounded-md hover:bg-blue-900 transition`}
       >
         {langValue['SendMessage']}
       </button>

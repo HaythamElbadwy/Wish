@@ -86,7 +86,7 @@ function NavItem({ to, icon, children, onClick, end }) {
         end={end}
         onClick={onClick}
         className={({ isActive }) =>
-          `flex items-center gap-3 p-3 rounded-lg transition-colors ${isActive ? 'text-[#DC97E2]' : 'text-white'
+          `flex items-center gap-3 p-3 rounded-lg transition-colors ${isActive ? 'text-blue-400' : 'text-white'
           } hover:bg-white hover:text-black`
         }
       >

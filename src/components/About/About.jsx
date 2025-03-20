@@ -38,7 +38,7 @@ export default function About() {
               <h1 className="font-bold text-2xl lg:text-[2.5rem] text-[#413F3F] leading-tight mb-3">
               {langValue['MobileVersion']}
               </h1>
-              <span className="text-[#B269B9] text-3xl lg:text-[3rem] mx-3 font-bold">WishTv</span>
+              <span className={`${styles.wishtv_text} text-3xl lg:text-[3rem] mx-3 font-bold`}>WishTv</span>
               <h1 className="font-bold text-2xl lg:text-[2.5rem] text-[#413F3F] leading-tight">
               {langValue['available']}
               </h1>
