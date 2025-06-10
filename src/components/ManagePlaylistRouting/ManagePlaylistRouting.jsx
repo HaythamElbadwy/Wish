@@ -63,7 +63,7 @@ function ManagePlaylistRouting() {
             <NavItem to="accountdetails" icon="icon-[iconamoon--profile]">
               {langValue['AccountDetails']}
             </NavItem>
-            <NavItem  icon="icon-[tabler--logout-2]" onClick={handleLogout}>
+            <NavItem to={"/"}  icon="icon-[tabler--logout-2]" onClick={handleLogout}>
               {langValue['Logout']}
             </NavItem>
           </ul>
