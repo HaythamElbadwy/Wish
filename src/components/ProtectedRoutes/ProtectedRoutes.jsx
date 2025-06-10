@@ -6,7 +6,7 @@ export default function ProtectedRoutes({children}) {
 
   if (!localStorage.getItem('authToken')) {
 
-      return <Navigate to={'/Wish'} />
+      return <Navigate to={'/'} />
 
 
   }

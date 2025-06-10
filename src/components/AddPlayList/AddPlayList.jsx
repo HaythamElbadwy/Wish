@@ -82,7 +82,7 @@ export default function AddPlayList({ playlistId, initialPlaylistName, initialPl
       const result = await response.json();
 
       if (response.ok) {
-        navigate('/Wish/manageplaylist');
+        navigate('/manageplaylist');
       } else {
         setError(result.message || 'Failed to save playlist');
       }
@@ -185,7 +185,7 @@ export default function AddPlayList({ playlistId, initialPlaylistName, initialPl
             </button>
             <button
               type="button"
-              onClick={() => navigate('/Wish/manageplaylist')}
+              onClick={() => navigate('/manageplaylist')}
               className="w-full sm:w-auto min-w-[200px] bg-gray-100 text-gray-600 font-medium rounded-lg px-8 py-2.5 hover:bg-gray-200"
             >
               {langValue['Cancel']}

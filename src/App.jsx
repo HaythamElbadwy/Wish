@@ -59,7 +59,7 @@ function App() {
 
   const routes = createBrowserRouter([
     {
-      path: "/Wish",
+      path: "/",
       element:
         <LayOut />,
       children: [

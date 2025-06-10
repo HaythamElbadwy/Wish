@@ -18,6 +18,7 @@ import { Lang } from '../../lang.jsx';
 import { toast } from 'react-toastify';
 import { data } from 'autoprefixer';
 import logo from '../../assets/Image/wishlogo.png'
+import { useLocation } from 'react-router-dom';
 
 
 export default function Home() {
@@ -26,12 +27,20 @@ export default function Home() {
   const [deviceKey, setDeviceKey] = useState('');
   const [isLoader, setIsLoader] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
+  const location = useLocation();
+  const query = new URLSearchParams(location.search)
+  const queryMacAddress = query.get('macAddress');
+  const queryDeviceKey = query.get('deviceKey');
 
   const selectedLanguage = localStorage.getItem("lang") || 'en';
   const langValue = Lang[selectedLanguage];
-  const handleLogin = async (e) => {
+  const handleLogin = async (e, type, mac, key) => {
+
     setIsLoading(true);
-    e.preventDefault();
+    if (type != 'fromQuery') {
+      e.preventDefault();
+    }
+
     try {
       const response = await fetch('https://wish-omega-blush.vercel.app/user/login', {
         method: 'POST',
@@ -39,8 +48,8 @@ export default function Home() {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          macAddress: macAddress,
-          deviceKey: deviceKey
+          macAddress: mac == "default" ? macAddress : mac,
+          deviceKey: key == "default" ? deviceKey : key
         })
       });
       const data = await response.json();
@@ -84,6 +93,16 @@ export default function Home() {
 
   }, []);
 
+  useEffect(() => {
+    if (queryMacAddress && queryDeviceKey) {
+      setMacAddress(queryMacAddress)
+      setDeviceKey(queryDeviceKey)
+      handleLogin('e' , 'fromQuery', queryMacAddress, queryDeviceKey)
+    }
+
+
+  }, []);
+
   return (
     <>
       {isLoader ? <Loader /> : <>
@@ -95,19 +114,12 @@ export default function Home() {
             <div className={`container h-full ${isLoggedIn ? `text-center lg:mt-44 ${classes.wish_responive}` : ''}`}>
               {isLoggedIn ? null :
                 <div className={`${classes.macaddres} mt-4 rounded-xl`}>
-                  <form onSubmit={handleLogin} id="login-form" className="max-w-xs lg:max-w-sm mx-auto rounded-sm p-6">
+                  <form onSubmit={(e) => handleLogin(e , 'fromClick', 'default', 'default')} id="login-form" className="max-w-xs lg:max-w-sm mx-auto rounded-sm p-6">
                     <h1 className="text-lg lg:text-2xl mb-5 text-center">{langValue['LoginPlaylist']}</h1>
 
                     <div className="mb-5">
                       <label htmlFor="macAddress" className="block mb-2 text-sm lg:text-base text-white">MAC ADDRESS</label>
-                      {/* <input
-                        type="text"
-                        id="macAddress"
-                        value={macAddress}
-                        onChange={(e) => setMacAddress(e.target.value)}
-                        className="w-full h-full p-2.5 bg-gray-50 border text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600"
-                        required
-                      /> */}
+
 
                       <input
                         type="text"
@@ -117,7 +129,7 @@ export default function Home() {
                           let input = e.target.value;
                           input = input.replace(/[^a-zA-Z0-9]/g, '');
                           const formatted = input.match(/.{1,2}/g)?.join(':') || '';
-                          setMacAddress(formatted.toUpperCase());
+                          setMacAddress(formatted);
                         }}
                         className="w-full h-full p-2.5 bg-gray-50 border text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600"
                         required

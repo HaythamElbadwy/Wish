@@ -18,7 +18,7 @@ export default function Navbar() {
   const checkAuth = () => {
     const token = localStorage.getItem('authToken');
     if (token)
-      navigate('/Wish/manageplaylist')
+      navigate('/manageplaylist')
     return token ? true : false;
   };
 
@@ -58,12 +58,12 @@ export default function Navbar() {
 
   // Function to handle scroll and routing
   const handleScrollOrRoute = (scrollTarget) => {
-    if (location.pathname === '/Wish/' || location.pathname === '/Wish') {
+    if (location.pathname === '/' || location.pathname === '') {
       // If already on the home page, scroll to the target section
       animateScroll.scrollTo(document.getElementById(scrollTarget).offsetTop - 70);
       ScrollLink.scrollTo(scrollTarget);
     } else {
-      navigate('/Wish')
+      navigate('/')
       setTimeout(() => {
         animateScroll.scrollTo(document.getElementById(scrollTarget).offsetTop - 70);
         ScrollLink.scrollTo(scrollTarget);
@@ -78,7 +78,7 @@ export default function Navbar() {
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto py-4 w-[90%]">
 
         <div>
-          <NavLink to='/Wish' className="flex items-center space-x-3 rtl:space-x-reverse">
+          <NavLink to='/' className="flex items-center space-x-3 rtl:space-x-reverse">
             <span className="text-white text-2xl">
               <img src={logo} className='w-10' alt="wishtv" />
             </span>
