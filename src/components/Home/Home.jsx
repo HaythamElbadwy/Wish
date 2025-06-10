@@ -100,14 +100,29 @@ export default function Home() {
 
                     <div className="mb-5">
                       <label htmlFor="macAddress" className="block mb-2 text-sm lg:text-base text-white">MAC ADDRESS</label>
-                      <input
+                      {/* <input
                         type="text"
                         id="macAddress"
                         value={macAddress}
                         onChange={(e) => setMacAddress(e.target.value)}
                         className="w-full h-full p-2.5 bg-gray-50 border text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600"
                         required
+                      /> */}
+
+                      <input
+                        type="text"
+                        id="macAddress"
+                        value={macAddress}
+                        onChange={(e) => {
+                          let input = e.target.value;
+                          input = input.replace(/[^a-zA-Z0-9]/g, '');
+                          const formatted = input.match(/.{1,2}/g)?.join(':') || '';
+                          setMacAddress(formatted.toUpperCase());
+                        }}
+                        className="w-full h-full p-2.5 bg-gray-50 border text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600"
+                        required
                       />
+
                     </div>
 
                     <div className="mb-5">
