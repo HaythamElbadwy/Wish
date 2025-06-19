@@ -9,7 +9,7 @@ export default function TermsCondition() {
   const getTermsCondition = async () => {
 
     try {
-      const response = await fetch(`https://wish-omega-blush.vercel.app/footerContent/get?page=Terms_Conditions`, {
+      const response = await fetch(`https://wish-seven-gules.vercel.app/footerContent/get?page=Terms_Conditions`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',

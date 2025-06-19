@@ -23,7 +23,7 @@ export default function EditPlaylist() {
     }
 
     try {
-      const response = await fetch(`https://wish-omega-blush.vercel.app/playList/update/${playlist._id}`, {
+      const response = await fetch(`https://wish-seven-gules.vercel.app/playList/update/${playlist._id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

@@ -21,7 +21,7 @@ export default function Faqs() {
   const getFaqs = async () => {
 
     try {
-      const response = await fetch(`https://wish-omega-blush.vercel.app/faq/get`, {
+      const response = await fetch(`https://wish-seven-gules.vercel.app/faq/get`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',

@@ -8,7 +8,7 @@ export default function PrivacyPolicy() {
   const [editorHtml, setEditorHtml] = useState('');
   const getPrivacyPolicy = async () => {
     try {
-      const response = await fetch(`https://wish-omega-blush.vercel.app/footerContent/get?page=Privacy_Policy`, {
+      const response = await fetch(`https://wish-seven-gules.vercel.app/footerContent/get?page=Privacy_Policy`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',

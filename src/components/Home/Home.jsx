@@ -42,7 +42,7 @@ export default function Home() {
     }
 
     try {
-      const response = await fetch('https://wish-omega-blush.vercel.app/user/login', {
+      const response = await fetch('https://wish-seven-gules.vercel.app/user/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
