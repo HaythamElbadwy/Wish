@@ -54,9 +54,9 @@ export default function Home() {
       });
       const data = await response.json();
       if (response.status === 200) {
-
+        const newMac = mac == "default" ? macAddress : mac
         localStorage.setItem('authToken', data.token);
-        localStorage.setItem('macAddress', data.macAddress); // Store MAC address
+        localStorage.setItem('macAddress', newMac); // Store MAC address
 
         console.log(data);
 
