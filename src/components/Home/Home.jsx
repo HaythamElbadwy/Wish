@@ -56,7 +56,8 @@ export default function Home() {
       if (response.status === 200) {
 
         localStorage.setItem('authToken', data.token);
-        localStorage.setItem('macAddress', macAddress); // Store MAC address
+        localStorage.setItem('macAddress', data.macAddress); // Store MAC address
+
         console.log(data);
 
         setIsLoggedIn(true);
@@ -97,7 +98,7 @@ export default function Home() {
     if (queryMacAddress && queryDeviceKey) {
       setMacAddress(queryMacAddress)
       setDeviceKey(queryDeviceKey)
-      handleLogin('e' , 'fromQuery', queryMacAddress, queryDeviceKey)
+      handleLogin('e', 'fromQuery', queryMacAddress, queryDeviceKey)
     }
 
 
@@ -114,7 +115,7 @@ export default function Home() {
             <div className={`container h-full ${isLoggedIn ? `text-center lg:mt-44 ${classes.wish_responive}` : ''}`}>
               {isLoggedIn ? null :
                 <div className={`${classes.macaddres} mt-4 rounded-xl`}>
-                  <form onSubmit={(e) => handleLogin(e , 'fromClick', 'default', 'default')} id="login-form" className="max-w-xs lg:max-w-sm mx-auto rounded-sm p-6">
+                  <form onSubmit={(e) => handleLogin(e, 'fromClick', 'default', 'default')} id="login-form" className="max-w-xs lg:max-w-sm mx-auto rounded-sm p-6">
                     <h1 className="text-lg lg:text-2xl mb-5 text-center">{langValue['LoginPlaylist']}</h1>
 
                     <div className="mb-5">
