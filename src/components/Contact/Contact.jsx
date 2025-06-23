@@ -28,7 +28,7 @@ export default function Contact() {
   {/* Contact Form */}
   <div className="relative bg-[#00000071]  shadow-lg rounded-lg p-8 w-full max-w-md">
   <h1 className=" z-50 text-2xl text-center font-bold text-white mb-6">
-      {langValue['Contact Us']}
+      {langValue['ContactUs']}
     </h1>
     <h2 className="text-white text-lg mb-4">{langValue['SendMessage']}</h2>
 

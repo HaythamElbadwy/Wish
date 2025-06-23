@@ -14,12 +14,12 @@ export default function ActivateDevices() {
   const [price, setPrice] = useState(0);
 
   function openPopup() {
-    if(price != 0){
+    if (price != 0) {
       setPayPopUp(true)
-    }else{
+    } else {
       toast.error("Price Subscription not available now, connect with the customer service")
     }
-    
+
   }
 
   const handlePayment = async (e) => {
@@ -115,57 +115,52 @@ export default function ActivateDevices() {
     }
   };
 
-    /////////////////////// START GET PRICE////////////////////
-    const getPrice = async () => {
+  /////////////////////// START GET PRICE////////////////////
+  const getPrice = async () => {
 
-      try {
-        const response = await fetch(`https://wish-seven-gules.vercel.app/price/get`, {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        });
-  
-        const data = await response.json();
-  
-  
-        if (response.ok) {
-          toast.success(data.message, {
-            theme: "dark"
-          });
-          setPrice(data.subscriptionPrice.price);
-          console.log(data);
-        } else {
-          switch (response.status) {
-            case 500:
-              toast.error(data.message, {
-                theme: "dark"
-              });
-            case 404:
-              toast.error(data.message, {
-                theme: "dark"
-              });
-              break;
-            default:
-              toast('An error occurred. Please try again.');
-          }
+    try {
+      const response = await fetch(`https://wish-seven-gules.vercel.app/price/get`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      const data = await response.json();
+
+
+      if (response.ok) {
+        setPrice(data.subscriptionPrice.price);
+
+      } else {
+        switch (response.status) {
+          case 500:
+            console.log(data.message);
+
+          case 404:
+            console.log(data.message);
+
+            break;
+          default:
+            console.log('An error occurred. Please try again.');
         }
-  
-      } catch (err) {
-        console.error("Error Saving Content:", err);
-      } finally {
-        setIsLoading(false)
       }
-    };
-  
-  
-  
-    useEffect(() => {
-      getPrice()
-    }, [])
-  
-  
-    /////////////////////////END GET PRICE///////////////////////////
+
+    } catch (err) {
+      console.error("Error Saving Content:", err);
+    } finally {
+      setIsLoading(false)
+    }
+  };
+
+
+
+  useEffect(() => {
+    getPrice()
+  }, [])
+
+
+  /////////////////////////END GET PRICE///////////////////////////
 
   const selectedLanguage = localStorage.getItem("lang") || 'en';
   const langValue = Lang[selectedLanguage];
