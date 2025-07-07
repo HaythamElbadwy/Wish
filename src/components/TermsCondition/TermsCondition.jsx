@@ -20,7 +20,7 @@ export default function TermsCondition() {
 
       if (response.ok) {
         console.log(data);
-        
+
         toast.success(data.message, {
           theme: "dark"
         });
@@ -42,7 +42,7 @@ export default function TermsCondition() {
     } catch (err) {
       console.error("Error Saving Content:", err);
     } finally {
-     
+
     }
   };
   useEffect(() => {
@@ -52,11 +52,9 @@ export default function TermsCondition() {
     <>
       <div class={`${styles.term_conditions_parent}`}>
         <div class={`${styles.term_conditions}`}>
-          <h1>Terms and Conditions</h1>
-
         </div>
         <main class={`${styles.content}`}>
-        <div dangerouslySetInnerHTML={{ __html: editorHtml }} />
+          <div dangerouslySetInnerHTML={{ __html: editorHtml }} />
         </main>
         <FloatingWhatsApp phoneNumber="+1234567890"
           accountName="WishTV"
