@@ -42,7 +42,7 @@ export default function Home() {
     }
 
     try {
-      const response = await fetch('https://wish-seven-gules.vercel.app/user/login', {
+      const response = await fetch('https://wishtv.onrender.com/user/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -175,7 +175,7 @@ export default function Home() {
           </div>
           <FloatingWhatsApp phoneNumber="+1234567890"  // Replace with your WhatsApp number
             accountName="WishTV"  // Customize with your name or business name
-            avatar={logo} // Optional avatar or logo imageس
+            avatar={logo} // Optional avatar or logo image
             statusMessage="Typically replies within 1 hour"
             chatMessage="Hello! How can we help you?"
             allowEsc

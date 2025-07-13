@@ -31,7 +31,7 @@ export default function ActivateDevices() {
     setIsLoading(true);
 
     // Payment Intent
-    const response = await fetch('https://wish-seven-gules.vercel.app/subscription/pay', {
+    const response = await fetch('https://wishtv.onrender.com/subscription/pay', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -69,7 +69,7 @@ export default function ActivateDevices() {
 
   const subscription = async () => {
     try {
-      const response = await fetch(`https://wish-seven-gules.vercel.app/subscription/start`, {
+      const response = await fetch(`https://wishtv.onrender.com/subscription/start`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -119,7 +119,7 @@ export default function ActivateDevices() {
   const getPrice = async () => {
 
     try {
-      const response = await fetch(`https://wish-seven-gules.vercel.app/price/get`, {
+      const response = await fetch(`https://wishtv.onrender.com/price/get`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',

@@ -26,7 +26,7 @@ function App() {
     const getStripeKey = async () => {
       try {
         const response = await fetch(
-          "https://wish-omega-blush.vercel.app/apiKey/getPublishableKey",
+          "https://wishtv.onrender.com/apiKey/getPublishableKey",
           {
             method: "GET",
             headers: {
