@@ -66,9 +66,10 @@ function App() {
         { index: true, element: <Home /> },
         {
           path: "manageplaylist",
-          element: <ProtectedRoutes>
-            <ManagePlaylistRouting />
-          </ProtectedRoutes>,
+          element:
+            <ProtectedRoutes>
+              <ManagePlaylistRouting />
+            </ProtectedRoutes>,
           children: [
             {
               index: true,
